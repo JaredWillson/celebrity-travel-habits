@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>My Website</title>
   <!-- D3 library -->
   <script src="https://d3js.org/d3.v7.min.js"></script>
@@ -13,25 +15,25 @@
     crossorigin="" />
 
   <!-- Leaflet JavaScript code -->
+  
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
     crossorigin=""></script>
 
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin="" />
+
   <!-- Our CSS -->
-  <link rel="stylesheet" type="text/css" href="style.css">
-  <script type="text/javascript" src="GreatCircle.js"></script>
+  <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+  <script type="text/javascript" src="../templates/GreatCircle.js"></script>
   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 </head>
 <body>
-  <h1>Celebrity Flight Tracker</h1>
-  <h3>Data represent flights between 5/29/2023 and 5/29/2024</h3>
-  <li>All tail numbers and associated celebrities were sourced from
-    <a href="https://celebrityprivatejettracker.com/celebrity-jets/">Celebrity private jet tracker</a>
-    <p><br></p>
-  </li>
   <!-- The div where we'll insert our map -->
   <div id="map"></div>
-  <div id='myDiv'><!-- Plotly chart will be drawn inside this DIV --></div>
+  <div id='myDiv'>
+  <!-- Plotly chart will be drawn inside this DIV --></div>
 
   <!-- Div for celebrity selector and celebrity info  -->
   <div class="col-md-3">
@@ -40,13 +42,13 @@
       <select id="selCelebrityData" onchange="optionChanged(this.value)"></select>
     </div>
     <br>
-    <div class="card card-primary">
-      <div class="card-header">
-        <h4 class="card-title">Demographic Info</h4>
-      </div>
-      <div id="sample-metadata" class="card-body"></div>
-    </div>
   </div>
+  <p><hr><hr></p>  
+
+
+  
+  <h2>Celebrity Annual Flight Miles Comparison</h>
+    <br>
   <!-- End of div of celebrity selector and celebrity info  -->
   <script src="https://d3js.org/d3.v7.min.js"></script>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
@@ -61,6 +63,7 @@
   <select id="selDataset" onchange="optionChanged(this.value)"></select>
   <!-- Div for the bar chart -->
   <div id="bar"></div>
+
   <!-- Local JavaScript file -->
   <script src="../static/js/plot2.js"></script>
 
@@ -72,6 +75,18 @@
         console.log('Selected value:', selectedValue);
     }
   </script>
+  <hr>
+  <!-- The div that holds our map -->
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""></script>
+  <!-- D3 JavaScript -->
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <!-- Our JavaScript -->
+  <script type="text/javascript" src="../static/js/plot3.js"></script>
+
   <p>
     <h2>Data Endpoints:</h2>
     <a href="http://127.0.0.1:5000/flight_data">Flight Data JSON</a><br>
@@ -79,4 +94,3 @@
   </p>
 </body>
 </html>
-

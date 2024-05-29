@@ -10,7 +10,19 @@ CORS(app)
 @app.route("/")
 def home():
     # https://flask.palletsprojects.com/en/3.0.x/quickstart/#rendering-templates
-    return render_template('index_merged.html')
+    return render_template('index.html')
+
+@app.route("/heatmap")
+def heatmap():
+    return render_template('index_plot3.html')
+
+@app.route("/all_flights")
+def allflights():
+    return render_template('index_plot1.html')
+
+@app.route("/comparison")
+def comparison():
+    return render_template('index_plot2.html')
 
 
 @app.route('/flight_data')

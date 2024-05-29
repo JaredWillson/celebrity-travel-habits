@@ -1,14 +1,14 @@
 // Store our API endpoint as queryUrl.
-var queryUrl = "http://127.0.0.1:5000/flight_data";
+var query3Url = "http://127.0.0.1:5000/flight_data";
 
 // Perform a GET request to the query URL/
-d3.json(queryUrl).then(function (data) {
+d3.json(query3Url).then(function (data) {
     // Once we get a response, send the data.features object to the createFeatures function.
     createMap(data);
   });
 
 function markerSize (flight_count) {
-  console.log (`${flight_count}`);
+  //console.log (`${flight_count}`);
   return flight_count * 2000;
 }
 
