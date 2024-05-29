@@ -10,7 +10,7 @@ CORS(app)
 @app.route("/")
 def home():
     # https://flask.palletsprojects.com/en/3.0.x/quickstart/#rendering-templates
-    return render_template('index.html')
+    return render_template('index_merged.html')
 
 
 @app.route('/flight_data')
