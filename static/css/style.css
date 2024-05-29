@@ -1,0 +1,35 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+
+#map,
+body,
+html {
+  height: 100%;
+}
+
+.leaflet-tile-pane {
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
+
+.info {
+  padding: 10px 10px;
+  background: #fefffe;
+}
+
+.legend {
+  line-height: 20px;
+}
+
+.legend lgnd {
+  width: 20px;
+  height: 20px;
+  float: left;
+  margin-right: 10px;
+  margin-left: 5px;
+  opacity: 0.75;
+}
+
+
