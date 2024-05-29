@@ -1,9 +1,11 @@
 from flask import Flask, render_template, jsonify
+from flask_cors import CORS
 from sqlalchemy import create_engine, text, inspect
 import psycopg2
 import json
 
 app = Flask(__name__)
+CORS(app)
 
 @app.route("/")
 def home():
@@ -100,7 +102,6 @@ def get_destinations():
             airports arr, aircraft a
             WHERE cel.celebrity_id = a.celebrity_id
             AND a.tail_number = flts.tail_number
-            AND dep.airport_code = flts.dep_airport
             AND arr.airport_code = flts.arr_airport;'''
     # Execute the query
     cursor.execute(query)
