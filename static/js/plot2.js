@@ -13,8 +13,8 @@ function haversineDistance(lat1, lon1, lat2, lon2) {
 
 // Function to calculate total miles for each unique aircraft number
 function calculateTotalMilesPerAircraft() {
-    const flightsUrl = './data/flights.csv';
-    const airportsUrl = './data/airports.csv';
+    const flightsUrl = '../static/data/flights_merged.csv';
+    const airportsUrl = '../static/data/airports.csv';
 
     // Return a promise resolving to the flights and airports data
     return Promise.all([d3.csv(flightsUrl), d3.csv(airportsUrl)]);
@@ -53,7 +53,7 @@ function buildCharts(selectedCelebrity, flights, airports, celebrities) {
         const depAirport = airportMap[flight.dep_airport];
         const arrAirport = airportMap[flight.arr_airport];
 
-        if (depAirport && arrAirport) {
+        if (depAirport && arrAirport && flight.celebrity_name === selectedCelebrity) {
             const distance = haversineDistance(depAirport.lat, depAirport.lon, arrAirport.lat, arrAirport.lon);
             totalMiles += distance;
         }
@@ -91,7 +91,7 @@ function buildCharts(selectedCelebrity, flights, airports, celebrities) {
 
 // Function to build the dropdown menu
 function buildDropdown() {
-    const celebritiesUrl = './data/celebrity.csv';
+    const celebritiesUrl = '../static/data/celebrity.csv';
 
     // Fetch flights and airports data
     calculateTotalMilesPerAircraft().then(([flights, airports]) => {
