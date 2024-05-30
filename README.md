@@ -16,5 +16,10 @@ Data were sourced from two locations:
 - Celebrity flight data were sourced from https://celebrityprivatejettracker.com
 - Airport latitude and longitude were sourced from https://github.com/datasets/airport-codes
 
-### Ethica Considerations: ###
+### Ethical Considerations: ###
 While flight tracking of aircraft by tail numbers is readily available public information, it is important to ensure that the data are not used for stalking and invading the privacy of celebrity individuals. As a result, the team made the conscious decision not to display real-time data even if they were available. The data can be used to examine the behavior of the various celebrities, but it would be possible using our website to meet celebrities at the airport and antagonize them.
+
+While the website may be entertaining, it should not be used as an indicator that any given celebrity was on their plane for each flight, or that they were the only passenger. While there is a risk that a given celebrity's flight statistics are skewed by the inability to determine the specific passengers on board, the team felt this was overwhelmed by the benefit of showing the overwhelming disparity between celebrity travel and US averages.
+
+### Dataset Chosen ###
+While aircraft tail numbers and the associated flights are readily available, there is no single, eliable source for associating the individual aircraft with a particular celebrity. The owners of individual aircraft are often holding companies rather than the celebrities themselves. As a result, we are making the strong assumption that our source database of tail numbers, celebrityprivatejettracker.com, is accurate. We validated approximately ten of the 56 tail numbers through general searches of the web and all ten are consistently reported to the same celebrity across multiple websites, so the assumption seems reasonable for a first pass.
