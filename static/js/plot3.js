@@ -54,7 +54,7 @@ function createMap (flightsData) {
     if (airport_dict[airport] == null){
       airport_dict[airport] = {};
       airport_dict[airport]["name"] = airport_name;
-      airport_dict[airport]["flight_count"] = 0;
+      airport_dict[airport]["flight_count"] = 1;
       airport_dict[airport]["latitude"] = latitude;
       airport_dict[airport]["longitude"] = longitude;
     } else {
